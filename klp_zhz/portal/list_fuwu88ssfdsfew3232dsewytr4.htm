@@ -1,0 +1,41 @@
+<!--{template common/header}-->
+<!--{eval $wheresql = category_get_wheresql($cat);}-->
+<!--{eval $list = category_get_list($cat, $wheresql, $page);}-->
+<!--[name]孔龙派--服务流程[/name]-->
+<style id="diy_style" type="text/css"></style>
+<style type="text/css">
+	#wp.wp{width:100%; background: #fff;}
+	.klp_abouttit{margin: 50px 0;}
+	.klp_wpabout01 .klp_aboutcon01 .klp_abouttxt{ width:100%; margin-bottom:20px;}
+</style>
+<div class="wp klp_listbanner cl"><a href="">
+					<img src="{$_G['style']['styleimgdir']}/about_ban.jpg" width="1920" height="250" class="pcban">
+					<img src="{$_G['style']['styleimgdir']}/about_banm640.jpg" alt="" class="mban640">
+               		<img src="{$_G['style']['styleimgdir']}/about_banm460.jpg" alt="" class="mban460">
+</a></div>
+<div class="wp klp_listnav cl">
+	<ul>
+	<!--{if $cat[subs]}-->
+		<!--{loop $cat[subs] $value}-->
+			<li><a href="{$portalcategory[$value['catid']]['caturl']}" {if $value['catid'] == $cat['catid']} class="klp_active"{/if}>$value[catname]</a></li>
+		<!--{/loop}-->
+		<!--{else}-->
+		<!--{loop $cat[others] $value}-->
+			<li><a href="{$portalcategory[$value['catid']]['caturl']}" {if $value['catid'] == $cat['catid']} class="klp_active"{/if}>$value[catname]</a></li>
+		<!--{/loop}-->
+	<!--{/if}-->
+	</ul>
+</div>
+<div class="wp klp_abouttit cl"><span>$cat[catname]</span></div>
+<div class="klp_clear"></div>
+<div class="wp klp_wpabout01 cl">
+	<div class="klp_aboutcon klp_aboutcon01">
+	  <div class="klp_abouttxt" >
+			<!--[diy=klp_fuwuliucheng]--><div id="klp_fuwuliucheng" class="area"></div><!--[/diy]-->
+
+	  </div>
+	  <div class="klp_clear"></div>
+	</div>
+</div>
+
+<!--{template common/footer}-->

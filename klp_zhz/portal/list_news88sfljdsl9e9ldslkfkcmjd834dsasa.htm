@@ -1,0 +1,268 @@
+<!--{template common/header}-->
+<!--[name]孔龙派--新闻资讯[/name]-->
+<!--{eval $wheresql = category_get_wheresql($cat);}-->
+<!--{eval $list = category_get_list($cat, $wheresql, $page);}-->
+<!--{eval}-->
+function get_article_num($aid, $type) {  $aid = intval($aid);  $type = trim($type);  $typearray = array(   'viewnum','commentnum','favtimes','sharetimes' );
+    if ($aid == 0 || !in_array($type, $typearray)) {  return false; } else { return DB::result_first("SELECT $type FROM " . DB::table('portal_article_count') . " WHERE aid = '$aid'"); }
+}
+<!--{/eval}-->
+<div class="pdnv">
+    <div class="klp_con">
+		<a href="./" title="{lang homepage}">首页</a><em class="klp_font"> > </em>$cat[catname]
+        <ul class="nav">
+			<div class="bm_h cl" style="background:none; line-height:inherit; border:none; padding-right:0">
+				<!--{if ($_G['group']['allowpostarticle'] || $_G['group']['allowmanagearticle'] || $categoryperm[$catid]['allowmanage'] || $categoryperm[$catid]['allowpublish']) && empty($cat['disallowpublish'])}-->
+				<a href="portal.php?mod=portalcp&ac=article&catid=$cat[catid]" class="y xi2 addnew">{lang article_publish}</a>
+				<!--{/if}-->
+			</div>
+            
+               </ul>
+    </div>
+</div>
+<!--{ad/text/wp a_t}--> 
+
+<style id="diy_style" type="text/css"></style>
+<style>
+	.klp_wp{ width:100%}
+	body{ background:#f4f6f5}
+	#wp{width:auto !important;}
+
+
+</style>
+<div class="wp klp_con">
+	<!--[diy=ccdiy1]--><div id="ccdiy1" class="area"></div><!--[/diy]-->
+</div>
+<link href="template/klp_zhz/klp/bootstrap.css" rel="stylesheet">
+<link rel="stylesheet" href="template/klp_zhz/klp/index.css" />
+<div class="avia-section main_color avia-section-default avia-no-border-styling avia-bg-style-scroll  avia-builder-el-94  el_after_av_section el_before_av_masonry_entries container_wrap fullsize" style="background-color: #00A3D8;">
+	<div class="container">
+		<div class="template-page content  av-content-full alpha units">
+			<div class="post-entry post-entry-type-page post-entry-10286">
+				<div class="entry-content-wrapper clearfix">
+					<div style="padding-bottom:0px; color:#ffffff;font-size:28px;"
+					     class="av-special-heading av-special-heading-h6 custom-color-heading blockquote modern-quote modern-centered  avia-builder-el-95  avia-builder-el-no-sibling   av-inherit-size ">
+						<!--[diy=ccdiy2]--><div id="ccdiy2" class="area"></div><!--[/diy]-->
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<style type="text/css">
+	.klp_tabswp_text_ri * {
+		-webkit-box-sizing: border-box;
+		-moz-box-sizing: border-box;
+		box-sizing: border-box;
+	}
+	
+	.klp_tabswp_text_ri {
+		width: 100%;
+	}
+	
+	.klp_tabswp_text_ri ul {
+		width: 100%;
+	}
+	
+	.klp_tabswp_text_ri ul li {
+		border-bottom: none;
+	}
+	
+	.klp_tabswp_text_ri ul li a {
+		height: 32px;
+		display: block;
+		border-bottom: 1px solid #ccc;
+	}
+</style>
+<div style="clear: both"></div>
+<div class="wp klp_con">
+	<div class="swiper-container swiper-container_index" style="height: auto">
+		<div id="tabs-container" class="klp_bdtx_tab_00a2 swiper-wrapper">
+			<div class="klp_tabswp_text swiper-slide" style="height: auto">
+				<div class="klp_tabswp_text_ri">
+					<div style="clear: both; height: 20px;"></div>
+					<ul>
+						<!--[diy=ccdiy3]--><div id="ccdiy3" class="area"></div><!--[/diy]-->
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+
+
+
+
+<div class="avia-section main_color avia-section-default avia-no-border-styling avia-bg-style-scroll  avia-builder-el-94  el_after_av_section el_before_av_masonry_entries container_wrap fullsize" style="background-color: #00A3D8;">
+	<div class="container">
+		<div class="template-page content  av-content-full alpha units">
+			<div class="post-entry post-entry-type-page post-entry-10286">
+				<div class="entry-content-wrapper clearfix">
+					<div style="padding-bottom:0px; color:#ffffff;font-size:28px;"
+					     class="av-special-heading av-special-heading-h6 custom-color-heading blockquote modern-quote modern-centered  avia-builder-el-95  avia-builder-el-no-sibling   av-inherit-size ">
+						<!--[diy=ccdiy4]--><div id="ccdiy4" class="area"></div><!--[/diy]-->
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div style="clear: both;"></div>
+<style type="text/css">
+	.klp_newscon{margin: 0; }
+</style>
+
+<div class="wp klp_con">
+	<div style="clear: both; height: 20px;"></div>
+	<!--[diy=ccdiy5]--><div id="ccdiy5" class="area"></div><!--[/diy]-->
+</div>
+
+<div class="avia-section main_color avia-section-default avia-no-border-styling avia-bg-style-scroll  avia-builder-el-94  el_after_av_section el_before_av_masonry_entries container_wrap fullsize" style="background-color: #00A3D8;">
+	<div class="container">
+		<div class="template-page content  av-content-full alpha units">
+			<div class="post-entry post-entry-type-page post-entry-10286">
+				<div class="entry-content-wrapper clearfix">
+					<div style="padding-bottom:0px; color:#ffffff;font-size:28px;"
+					     class="av-special-heading av-special-heading-h6 custom-color-heading blockquote modern-quote modern-centered  avia-builder-el-95  avia-builder-el-no-sibling   av-inherit-size ">
+						<!--[diy=ccdiy6]--><div id="ccdiy6" class="area"></div><!--[/diy]-->
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+
+
+
+<div class="wp klp_con">
+	<div style="clear: both; height: 20px;"></div>
+	<!--[diy=ccdiy7]--><div id="ccdiy7" class="area"></div><!--[/diy]-->
+</div>
+
+<div class="avia-section main_color avia-section-default avia-no-border-styling avia-bg-style-scroll  avia-builder-el-94  el_after_av_section el_before_av_masonry_entries container_wrap fullsize" style="background-color: #00A3D8;">
+	<div class="container">
+		<div class="template-page content  av-content-full alpha units">
+			<div class="post-entry post-entry-type-page post-entry-10286">
+				<div class="entry-content-wrapper clearfix">
+					<div style="padding-bottom:0px; color:#ffffff;font-size:28px;"
+					     class="av-special-heading av-special-heading-h6 custom-color-heading blockquote modern-quote modern-centered  avia-builder-el-95  avia-builder-el-no-sibling   av-inherit-size ">
+						<!--[diy=ccdiy8]--><div id="ccdiy8" class="area"></div><!--[/diy]-->
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+
+<style type="text/css">
+	#top #av-masonry-1 .isotope .av-masonry-entry{ padding-left: 0; padding-right: 0;}
+</style>
+<div class="wp klp_con">
+	<div id="top">
+		<div id="av-masonry-1" class="av-masonry  noHover av-fixed-size av-large-gap av-hover-overlay-active av-masonry-col-3 av-caption-always av-caption-style-overlay av-masonry-gallery avia_sortable_active">
+			<div class="av-masonry-container isotope">
+				<!--[diy=ccdiy9]--><div id="ccdiy9" class="area"></div><!--[/diy]-->
+			</div>
+		</div>
+	</div>
+</div>
+
+<div style="clear: both"></div>
+
+
+<div class="avia-section main_color avia-section-default avia-no-border-styling avia-bg-style-scroll  avia-builder-el-94  el_after_av_section el_before_av_masonry_entries container_wrap fullsize" style="background-color: #00A3D8;">
+	<div class="container">
+		<div class="template-page content  av-content-full alpha units">
+			<div class="post-entry post-entry-type-page post-entry-10286">
+				<div class="entry-content-wrapper clearfix">
+					<div style="padding-bottom:0px; color:#ffffff;font-size:28px;"
+					     class="av-special-heading av-special-heading-h6 custom-color-heading blockquote modern-quote modern-centered  avia-builder-el-95  avia-builder-el-no-sibling   av-inherit-size ">
+						<!--[diy=ccdiy10]--><div id="ccdiy10" class="area"></div><!--[/diy]-->
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div style="clear: both"></div>
+<div class="wp klp_con">
+	<div class="swiper-container swiper-container_index">
+		<div id="tabs-container" class="klp_bdtx_tab_00a2 swiper-wrapper">
+			<div class="klp_tabswp_text swiper-slide">
+				<div class="klp_tabswp_text_ri">
+					<div style="clear: both; height: 20px;"></div>
+					<ul>
+						<!--[diy=ccdiy11]--><div id="ccdiy11" class="area"></div><!--[/diy]-->
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+<div style="clear: both"></div>
+<div class="avia-section main_color avia-section-default avia-no-border-styling avia-bg-style-scroll  avia-builder-el-94  el_after_av_section el_before_av_masonry_entries container_wrap fullsize" style="background-color: #00A3D8;">
+	<div class="container">
+		<div class="template-page content  av-content-full alpha units">
+			<div class="post-entry post-entry-type-page post-entry-10286">
+				<div class="entry-content-wrapper clearfix">
+					<div style="padding-bottom:0px; color:#ffffff;font-size:28px;"
+					     class="av-special-heading av-special-heading-h6 custom-color-heading blockquote modern-quote modern-centered  avia-builder-el-95  avia-builder-el-no-sibling   av-inherit-size ">
+						<!--[diy=ccdiy14]--><div id="ccdiy14" class="area"></div><!--[/diy]-->
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div style="clear: both"></div>
+
+  <div class="klp_con klp_catwp"> 
+   <div class="klp_listwp">
+    <div class="klp_listboxcon" style="width: 100%; float: none;">
+     <div class="klp_newsbox cl">
+     			<!--{loop $list['list'] $value}-->
+				<!--{eval $highlight = article_title_style($value);}-->
+				<!--{eval $article_url = fetch_article_url($value);}-->
+      <div class="klp_newscon col-md-6 col-sm-6 col-xs-12">
+      <!--{if $value[pic]}--><a href="$article_url" class="klpd_focus"><img src="$value[pic]" alt="$value[title]" class="thumb" /></a><!--{/if}-->
+       <div class="klp_title">
+        <h2><a href="$article_url">$value[title]</a></h2>
+       </div>
+       <div class="meta">
+        <span class="ptime"><em class="klp_font_ptime"></em>$value[dateline]</span>
+        <span class="pview"><em class="klp_font_pview"></em>{echo get_article_num($value[aid],'viewnum')}</span>
+       
+        
+        <!--{if $_G['group']['allowmanagearticle'] || ($_G['group']['allowpostarticle'] && $value['uid'] == $_G['uid'] && (empty($_G['group']['allowpostarticlemod']) || $_G['group']['allowpostarticlemod'] && $value['status'] == 1)) || $categoryperm[$value['catid']]['allowmanage']}-->
+        <span class="pedite"><a href="portal.php?mod=portalcp&ac=article&op=edit&aid=$value[aid]">{lang edit}</a></span>
+            <span class="pedite"><a href="portal.php?mod=portalcp&ac=article&op=delete&aid=$value[aid]" id="article_delete_$value[aid]" onclick="showWindow(this.id, this.href, 'get', 0);">{lang delete}</a></span>
+        <!--{/if}-->
+       </div>
+       <p class="note">$value[summary]</p>
+      </div>
+      
+      <!--{/loop}-->
+      <div class="klp_cl"></div>
+      <!--{if $list['multi']}--><div class="pgs klp_pgs cl">{$list['multi']}</div><!--{/if}-->
+     </div>
+    </div>
+    
+   </div>
+   
+  </div>
+
+<!--{template common/footer}-->

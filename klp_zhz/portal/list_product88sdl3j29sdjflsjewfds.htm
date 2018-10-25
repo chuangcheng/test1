@@ -1,0 +1,94 @@
+<!--{template common/header}-->
+<!--[name]孔龙派--产品展示[/name]-->
+<!--{eval $wheresql = category_get_wheresql($cat);}-->
+<!--{eval $list = category_get_list($cat, $wheresql, $page);}-->
+<!--{eval}-->
+function get_article_num($aid, $type) {  $aid = intval($aid);  $type = trim($type);  $typearray = array(   'viewnum','commentnum','favtimes','sharetimes' );
+    if ($aid == 0 || !in_array($type, $typearray)) {  return false; } else { return DB::result_first("SELECT $type FROM " . DB::table('portal_article_count') . " WHERE aid = '$aid'"); }
+}
+<!--{/eval}-->
+
+<!--{ad/text/wp a_t}--> 
+
+<style id="diy_style" type="text/css"></style>
+<style>
+	.klp_wp{ width:100%}
+	body{ background:#f4f6f5}
+	#wp{width:auto !important;}
+
+
+</style>
+<div class="wp klp_con">
+	<!--[diy=diy1]--><div id="diy1" class="area"></div><!--[/diy]-->
+</div>
+  <div class="klp_con klp_catwp"> 
+   <div class="klp_listwp"> 
+   
+    <div class="klp_listboxcon"> 
+     <div class="pdnv">
+		<a href="./" title="{lang homepage}">首页</a><em class="klp_font"> > </em>$cat[catname]
+        <ul class="nav">
+			<div class="bm_h cl" style="background:none; line-height:inherit; border:none; padding-right:0">
+				<!--{if ($_G['group']['allowpostarticle'] || $_G['group']['allowmanagearticle'] || $categoryperm[$catid]['allowmanage'] || $categoryperm[$catid]['allowpublish']) && empty($cat['disallowpublish'])}-->
+				<a href="portal.php?mod=portalcp&ac=article&catid=$cat[catid]" class="y xi2 addnew">{lang article_publish}</a>
+				<!--{/if}-->
+			</div> 
+        </ul>
+	 </div>
+	<div class="klp_catnv cl dismnone">
+		<ul class="cl">
+			<li class="klp_catnvfirst"><a href="">栏目导航</a></li>
+			<!--{if $cat[subs]}-->	
+			<!--{loop $cat[subs] $value}-->	<li><a href="{$portalcategory[$value['catid']]['caturl']}" {if $value['catid'] == $cat['catid']} class="klp_active"{/if}>$value[catname]</a></li><!--{/loop}-->
+			<!--{else}-->
+			<!--{loop $cat[others] $value}--><li><a href="{$portalcategory[$value['catid']]['caturl']}" {if $value['catid'] == $cat['catid']} class="klp_active"{/if}>$value[catname]</a></li><!--{/loop}-->
+			<!--{/if}-->
+		</ul>
+    </div>
+     <div class="klp_picsbox cl">
+     			<!--{loop $list['list'] $value}-->
+				<!--{eval $highlight = article_title_style($value);}-->
+				<!--{eval $article_url = fetch_article_url($value);}-->
+      <div class="klp_picscon">
+      <!--{if $value[pic]}--><a href="$article_url" class="klpd_focus"><img src="$value[pic]" alt="$value[title]" class="thumb" /></a><!--{/if}-->
+        <p><a href="$article_url">$value[title]</a></p>
+      </div>
+     
+      <!--{/loop}-->
+       <div class="klp_cl"></div>
+      <!--{if $list['multi']}--><div class="pgs klp_pgs cl">{$list['multi']}</div><!--{/if}-->
+     </div>
+    </div> 
+    
+    <div class="klp_pindaosd"> 
+		<div class="klp_catnvsd cl disnone">
+			<ul class="cl">
+				<li class="klp_catnvfirst"><a href="">栏目导航</a></li>
+				<!--{if $cat[subs]}-->	
+				<!--{loop $cat[subs] $value}-->	<li><a href="{$portalcategory[$value['catid']]['caturl']}" {if $value['catid'] == $cat['catid']} class="klp_active"{/if}>$value[catname]</a></li><!--{/loop}-->
+				<!--{else}-->
+				<!--{loop $cat[others] $value}--><li><a href="{$portalcategory[$value['catid']]['caturl']}" {if $value['catid'] == $cat['catid']} class="klp_active"{/if}>$value[catname]</a></li><!--{/loop}-->
+				<!--{/if}-->
+			</ul>
+		</div>
+    			<!--[diy=klp_side300001]-->
+			<div id="klp_side300001" class="area"></div>
+			<!--[/diy]-->
+		
+
+			<!--热门排行-->
+			<div class="klp_clear"></div>
+			<!--[diy=klp_remenrank]--><div id="klp_remenrank" class="area"></div><!--[/diy]-->
+			<div class="klp_clear"></div>
+			<!--热门排行-->
+			
+						<div class="drag">
+				<!--[diy=diy2]--><div id="diy2" class="area"></div><!--[/diy]-->
+			</div>
+
+   </div>
+   </div> 
+   
+  </div>
+
+<!--{template common/footer}-->

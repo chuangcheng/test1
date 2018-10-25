@@ -1,0 +1,66 @@
+<!--{template common/header}-->
+<!--[name]¿×ÁúÅÉ--¹«Ë¾¼ò½é[/name]-->
+<style id="diy_style" type="text/css"></style>
+<style type="text/css">
+	#wp.wp{width:100%; background: #fff;}
+
+</style>
+<div class="wp klp_listbanner cl"><a href="">
+					<img src="{$_G['style']['styleimgdir']}/about_ban.jpg" width="1920" height="250" class="pcban">
+					<img src="{$_G['style']['styleimgdir']}/about_banm640.jpg" alt="" class="mban640">
+               		<img src="{$_G['style']['styleimgdir']}/about_banm460.jpg" alt="" class="mban460">
+</a></div>
+<div class="wp klp_listnav cl">
+	<ul>
+	<!--{if $cat[subs]}-->
+		<!--{loop $cat[subs] $value}-->
+			<li><a href="{$portalcategory[$value['catid']]['caturl']}" {if $value['catid'] == $cat['catid']} class="klp_active"{/if}>$value[catname]</a></li>
+		<!--{/loop}-->
+		<!--{else}-->
+		<!--{loop $cat[others] $value}-->
+			<li><a href="{$portalcategory[$value['catid']]['caturl']}" {if $value['catid'] == $cat['catid']} class="klp_active"{/if}>$value[catname]</a></li>
+		<!--{/loop}-->
+	<!--{/if}-->
+	</ul>
+</div>
+<div class="wp klp_abouttit cl"><span>$cat[catname]</span></div>
+<div class="klp_clear"></div>
+<div class="wp klp_wpabout01 cl">
+	<div class="klp_aboutcon klp_aboutcon01">
+	  <div class="klp_aboutimg"><!--[diy=klp_aboutusimg]--><div id="klp_aboutusimg" class="area"></div><!--[/diy]--></div>
+	  <div class="klp_abouttxt">
+		<div class="klp_abouttitle"><!--[diy=klp_aboutustitle]--><div id="klp_aboutustitle" class="area"></div><!--[/diy]--></div>
+		<!--[diy=klp_aboutus]--><div id="klp_aboutus" class="area"></div><!--[/diy]-->
+	  </div>
+	  <div class="klp_clear"></div>
+	</div>
+</div>
+
+<div class="wp klp_wpabout02 cl">
+	<div class="klp_aboutcon3_bg">
+	  <div class="klp_aboutcon klp_aboutcon3">
+		<div class="klp_abouttitle"><!--[diy=klp_aboutus002tit]--><div id="klp_aboutus002tit" class="area"></div><!--[/diy]--></div>
+		<div class="klp_aboutlist">
+		  <ul>
+			<li class="li1"><!--[diy=klp_aboutus02a]--><div id="klp_aboutus02a" class="area"></div><!--[/diy]--></li>
+			<li class="li2"><!--[diy=klp_aboutus02b]--><div id="klp_aboutus02b" class="area"></div><!--[/diy]--></li>
+			<li class="li3"><!--[diy=klp_aboutus02c]--><div id="klp_aboutus02c" class="area"></div><!--[/diy]--></li>
+			<li class="li4"><!--[diy=klp_aboutus02d]--><div id="klp_aboutus02d" class="area"></div><!--[/diy]--></li>
+		  </ul>
+		</div>
+	  </div>
+	</div>
+
+</div>
+
+<div class="wp klp_wpabout03 cl">
+	<div class="klp_aboutcon klp_aboutcon02">
+	  <div class="klp_abouttitle"><!--[diy=klp_ppqy]--><div id="klp_ppqy" class="area"></div><!--[/diy]--></div>
+	  <div class="klp_aboutimg"><!--[diy=klp_ppqyimg]--><div id="klp_ppqyimg" class="area"></div><!--[/diy]--></div>
+	  <div class="klp_abouttxt"><!--[diy=klp_ppqycon]--><div id="klp_ppqycon" class="area"></div><!--[/diy]--></div>
+	  
+	  <div class="klp_clear"></div>
+	</div>
+</div>
+
+<!--{template common/footer}-->
